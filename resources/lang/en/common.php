@@ -20,6 +20,8 @@ return [
             'create' => 'Create',
             'logout' => 'Log out',
             'reset' => 'Reset',
+            'delete' => 'Delete',
+            'add_task' => 'Add task',
         ],
         'label' => [
             'remember_me' => 'Remember Me',
@@ -28,6 +30,7 @@ return [
             'password' => 'Password',
             'password_confirm' => 'Confirm password',
             'password_reset' => 'Password reset',
+            'task' => 'Task',
         ],
     ],
     'header' => [
@@ -37,10 +40,20 @@ return [
         'logout' => 'Logout',
         'register' => 'Register',
         'verify' => 'Verify Your Email Address',
+        'reset_password' => 'Reset password',
+        'new_task' => 'New task',
+        'current_tasks' => 'Current Tasks',
+    ],
+    'text' => [
+        'no_task' => 'Nothing. Let\'s add some tasks!!',
+        'verification_link_reset' => 'A fresh verification link has been sent to your email address.',
         'check_verify' => 'Before proceeding, please check your email for a verification link.',
         'receive_email' => 'If you did not receive the email',
         'request_email' => 'click here to request another',
-        'reset_password' => 'Reset password',
-
+    ],
+    'table' => [
+        'task' => 'Task',
+        'created_at' => 'Created at',
+        'action' => 'Action'
     ],
 ];

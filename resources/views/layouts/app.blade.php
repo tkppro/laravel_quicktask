@@ -9,15 +9,12 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-
-
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('font/css/font-awesome.min.css') }}">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -57,11 +54,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <button class="dropdown-item" id="logout"
-                                       onclick="logout();">
+                                    <button class="dropdown-item" id="logout">
                                         @lang('common.header.logout')
                                     </button>
-
                                 </div>
                             </li>
                         @endguest
@@ -74,7 +69,8 @@
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/logout.js') }}"></script>
+
 </body>
 </html>

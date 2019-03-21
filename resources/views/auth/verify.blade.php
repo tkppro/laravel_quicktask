@@ -10,12 +10,12 @@
                 <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                            @lang('common.text.verification_link_reset')
                         </div>
                     @endif
 
-                    @lang('common.header.check_verify')
-                    @lang('common.header.receive_email'), <a href="{{ route('verification.resend') }}">@lang('common.header.request_email')</a>.
+                    @lang('common.text.check_verify')
+                    @lang('common.text.receive_email'), <a href="{{ route('verification.resend') }}">@lang('common.text.request_email')</a>.
                 </div>
             </div>
         </div>

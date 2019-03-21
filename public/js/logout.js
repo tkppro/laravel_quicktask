@@ -1,19 +1,20 @@
-function logout(){
+$(document).ready(function (){
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
 
-    $.ajax(
-    {
-        url: '/logout',
-        method: 'post',
-        success: function (response)
+    $('#logout').on('click', function () {
+        $.ajax(
         {
-            location.reload();
-        }
+            url: '/logout',
+            method: 'post',
+            success: function (response)
+            {
+                location.reload();
+            }
 
+        });
     });
-
-}
+});
