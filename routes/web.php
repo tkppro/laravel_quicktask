@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('tasks')->group(function () {
+    Route::get('/', 'TaskController@index')->name('tasks.index');
+    Route::post('/', 'TaskController@store')->name('tasks.store');
+    Route::delete('{id}', 'TaskController@destroy')->name('tasks.delete');
+});
