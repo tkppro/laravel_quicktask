@@ -20,3 +20,7 @@ Route::prefix('tasks')->group(function () {
     Route::post('/', 'TaskController@store')->name('tasks.store');
     Route::delete('{id}', 'TaskController@destroy')->name('tasks.delete');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
