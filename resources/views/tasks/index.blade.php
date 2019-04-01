@@ -9,9 +9,13 @@
             </div>
 
             <div class="card-body">
-                @include('common.errors')
+                @include('common.message')
                 <!-- New Task Form -->
-                {!! Form::open(['class' => 'form-horizontal']) !!}
+                {!! Form::open([
+                    'class' => 'form-horizontal',
+                    'method' => 'post',
+                    'route' => 'tasks.store',
+                ]) !!}
 
                 <!-- Task Name -->
                     <div class="form-group">
@@ -21,9 +25,9 @@
                         <div class="col-md-6">
                             {!! Form::text('name', '', [
                                 'id' => 'task-name',
-                                'class' => 'form-control'
+                                'class' => 'form-control ' . ($errors->has('name') ? ' is-invalid' : '')
                             ]) !!}
-
+                            @include('common.errors')
                         </div>
                     </div>
 

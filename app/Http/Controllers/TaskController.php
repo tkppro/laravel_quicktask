@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Task;
 use Auth;
+use App\Http\Requests\CreateTaskRequest;
 
 class TaskController extends Controller
 {
@@ -20,9 +21,17 @@ class TaskController extends Controller
         return view('tasks.index', ['tasks' => $tasks]);
     }
 
-    public function store()
+    public function store(CreateTaskRequest $request)
     {
+        $user = Auth::user();
+        $task = new Task($request->all());
 
+        if ($user->tasks()->save($task)) {
+            return redirect()->route('tasks.index')->with([
+                'level' => 'success',
+                'message' => trans('common.task.create.success'),
+            ]);
+        }
     }
 
     public function destroy()
