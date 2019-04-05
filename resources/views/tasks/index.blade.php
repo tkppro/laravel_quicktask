@@ -38,7 +38,7 @@
                             [
                                 'type' => 'submit',
                                 'class' => 'btn btn-primary'
-                            ] )  !!}
+                            ])  !!}
                         </div>
                     </div>
                 {!! Form::close() !!}
